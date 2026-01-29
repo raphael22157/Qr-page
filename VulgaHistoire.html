@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUT Sciences des Données – Une histoire</title>
+  <style>
+    :root {
+      --bg1: #0ea5e9;
+      --bg2: #22c55e;
+      --bg3: #f59e0b;
+      --bg4: #a855f7;
+      --text: #0f172a;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg1), var(--bg4));
+      color: var(--text);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 4rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .story {
+      background: rgba(255,255,255,0.9);
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 0;
+      color: #0284c7;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      color: #16a34a;
+      margin-top: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #7c3aed;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: #ea580c;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #e0f2fe, #dcfce7);
+      padding: 1.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* Fenêtre info */
+    .info {
+      display: none;
+      margin-top: 1.5rem;
+      background: #fef9c3;
+      padding: 1.2rem;
+      border-radius: 15px;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0f172a;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h1>Et si les données racontaient le monde ?</h1>
+      <p>
+        Chaque jour, tu produis des <span class="highlight">données</span> :
+        notes, messages, réseaux sociaux, sport, météo, applis.
+      </p>
+      <p>
+        Le BUT Sciences des Données te propose d’apprendre à leur donner du sens.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h2>Le problème</h2>
+      <p>
+        Les organisations ont énormément de chiffres… mais peu de réponses.
+      </p>
+      <button class="btn" onclick="toggleInfo('info1')">Pourquoi c’est un problème ?</button>
+      <div class="info" id="info1">
+        Sans analyse, les données restent inutiles. Mal exploitées, elles peuvent même mener à de mauvaises décisions.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h2>Le rôle du BUT Sciences des Données</h2>
+      <p>
+        Transformer des données brutes en <span class="highlight">décisions utiles</span>.
+      </p>
+      <div class="grid">
+        <div class="card">Collecter et vérifier les données</div>
+        <div class="card">Les stocker et les organiser</div>
+        <div class="card">Les analyser avec des statistiques</div>
+        <div class="card">Créer des tableaux de bord</div>
+        <div class="card">Expliquer les résultats</div>
+        <div class="card">Sécuriser les données</div>
+      </div>
+      <button class="btn" onclick="toggleInfo('info2')">Exemples concrets</button>
+      <div class="info" id="info2">
+        Suivi des ventes, analyse de résultats sportifs, études de santé, indicateurs pour entreprises ou administrations.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h2>Deux parcours possibles</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>EMS</h3>
+          <p>Statistiques, modélisation, IA</p>
+        </div>
+        <div class="card">
+          <h3>VCOD</h3>
+          <p>Développement, tableaux de bord, BI</p>
+        </div>
+      </div>
+      <button class="btn" onclick="toggleInfo('info3')">Comment choisir ?</button>
+      <div class="info" id="info3">
+        EMS si tu aimes analyser et modéliser. VCOD si tu préfères créer des outils concrets et visuels.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h2>Les métiers</h2>
+      <div class="grid">
+        <div class="card">Data analyst</div>
+        <div class="card">Data scientist</div>
+        <div class="card">Statisticien</div>
+        <div class="card">Développeur BI</div>
+        <div class="card">Data manager</div>
+        <div class="card">Chargé d’études</div>
+      </div>
+      <button class="btn" onclick="toggleInfo('info4')">Où travaillent-ils ?</button>
+      <div class="info" id="info4">
+        Entreprises, santé, finance, industrie, recherche, administrations publiques.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story">
+      <h2>Et toi ?</h2>
+      <p>
+        Si tu aimes comprendre, analyser et donner du sens aux chiffres,
+        le <span class="highlight">BUT Sciences des Données</span> peut être ton avenir.
+      </p>
+      <p class="highlight">Des données aux décisions. Des chiffres à ton futur.</p>
+      <a href="Vulgarisation.html" class="btn">
+  Découvrir la formation en détail
+</a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  BUT Sciences des Données – Affiche narrative interactive
+</footer>
+
+<script>
+  function toggleInfo(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>

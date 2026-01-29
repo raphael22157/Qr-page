@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUT Science des Données - Aurillac</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { background: var(--dark); color: var(--light); line-height: 1.7; overflow-x: hidden; }
+
+        /* --- Navigation --- */
+        nav { 
+            padding: 1.5rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(15, 23, 42, 0.9); 
+            backdrop-filter: blur(10px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            border-bottom: 1px solid var(--glass); 
+        }
+        .logo-box { 
+            width: 180px; 
+            height: 50px; 
+            border: 2px dashed var(--primary); 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold; 
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero { 
+            height: 60vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 2rem; 
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%); 
+        }
+        .hero h1 { 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            line-height: 1.1; 
+            margin-bottom: 1.5rem; 
+            background: linear-gradient(to right, #fff, var(--primary)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .hero p { max-width: 800px; font-size: 1.2rem; color: #cbd5e1; }
+
+        /* --- Tabs System --- */
+        .tabs-container { max-width: 1100px; margin: -50px auto 4rem; padding: 0 1rem; position: relative; z-index: 10; }
+        .tab-menu { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            justify-content: center; 
+            margin-bottom: 3rem; 
+            background: rgba(30, 41, 59, 0.5);
+            padding: 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .tab-btn { 
+            padding: 1rem 1.5rem; 
+            border: none; 
+            background: transparent; 
+            color: #94a3b8; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            font-weight: 600; 
+        }
+        .tab-btn.active { 
+            background: var(--primary); 
+            color: white; 
+            box-shadow: 0 10px 20px -10px var(--primary); 
+        }
+
+        .tab-content { display: none; animation: fadeIn 0.5s ease forwards; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Cards & Content --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card { 
+            background: var(--glass); 
+            padding: 2.5rem; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            transition: 0.3s; 
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); background: rgba(255,255,255,0.08); }
+        .card h3 { margin-bottom: 1rem; color: var(--primary); font-size: 1.4rem; }
+        .card p { font-size: 0.95rem; color: #cbd5e1; }
+        
+        .highlight-box { 
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); 
+            padding: 2rem; 
+            border-radius: 24px; 
+            border-left: 4px solid var(--secondary); 
+            margin-bottom: 1.5rem; 
+        }
+        .highlight-box h3 { color: white; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+
+        ul { list-style: none; margin-top: 1rem; }
+        li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        li::before { content: "→"; position: absolute; left: 0; color: var(--primary); }
+
+        footer { text-align: center; padding: 4rem; border-top: 1px solid var(--glass); color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-box">LOGO SD</div>
+        <div style="text-align: right;">
+            <p style="font-weight: 800; font-size: 0.9rem;">IUT AURILLAC</p>
+            <p style="color: var(--primary); font-size: 0.7rem; font-weight: bold;">SCIENCE DES DONNÉES</p>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Donnez du sens aux chiffres</h1>
+        <p>Le BUT SD forme les futurs experts de la donnée : de la collecte à l'analyse, jusqu'à la protection contre les cyber-attaques.</p>
+    </header>
+
+    <main class="tabs-container">
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="openTab(event, 'missions')">L'essentiel</button>
+            <button class="tab-btn" onclick="openTab(event, 'parcours')">Nos Spécialités</button>
+            <button class="tab-btn" onclick="openTab(event, 'metiers')">Devenir qui ?</button>
+            <button class="tab-btn" onclick="openTab(event, 'cyber')">Le "Plus" Cyber</button>
+        </div>
+
+        <div id="missions" class="tab-content active">
+            <h2>Notre mission : Dompter la donnée</h2>
+            <p>Nous apprenons à transformer des millions d'informations brutes en outils de compréhension pour le monde réel.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>📁 Gérer</h3>
+                    <p>Apprendre à concevoir, mettre à jour et administrer des bases de données pour que l'information soit toujours accessible et bien rangée.</p>
+                </div>
+                <div class="card">
+                    <h3>📊 Analyser</h3>
+                    <p>Maîtriser toute la démarche statistique : de la collecte des données au contrôle de leur qualité, jusqu'à l'analyse des résultats.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Décider</h3>
+                    <p>Mettre en place des systèmes d'information décisionnels et concevoir des tableaux de bord pour aider les entreprises à piloter leur activité.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="parcours" class="tab-content">
+            <h2>Deux chemins vers l'expertise</h2>
+            <p>Après un socle solide en stats, informatique et maths, vous choisissez votre voie en 2ème et 3ème année.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>🧬 Parcours EMS</h3>
+                    <p><strong>Exploration et Modélisation Statistique</strong> </p>
+                    <p>Le paradis de l'IA et des sciences. On y apprend à entraîner des machines et à analyser des données médicales ou biologiques.</p>
+                    <ul>
+                        <li>Apprentissage statistique pour l'IA </li>
+                        <li>Modélisation statistique avancée </li>
+                        <li>Bio-statistiques et pré-traitement </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛠️ Parcours VCOD</h3>
+                    <p><strong>Visualisation et Outils Décisionnels</strong> </p>
+                    <p>Pour les bâtisseurs de solutions. On crée des logiciels robustes et des outils visuels pour rendre la donnée compréhensible par tous.</p>
+                    <ul>
+                        <li>Développement logiciel </li>
+                        <li>Programmation d'applications </li>
+                        <li>Outils décisionnels et cryptographie </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="metiers" class="tab-content">
+            <h2>Les métiers de demain</h2>
+            <p>La formation ouvre les portes de nombreux secteurs : finance, marketing, administration ou encore recherche et développement.</p>
+
+            <div class="highlight-box">
+                <h3>🔍 Data Analyst</h3>
+                <p>C'est l'enquêteur qui fait parler les chiffres du passé pour expliquer une situation et proposer des solutions concrètes.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🤖 Data Scientist</h3>
+                <p>C'est l'expert qui crée des modèles pour prédire le futur, souvent grâce à l'intelligence artificielle.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📊 Développeur BI</h3>
+                <p>Il conçoit les tableaux de bord interactifs qui permettent aux directeurs de suivre la santé de leur entreprise en temps réel.</p>
+            </div>
+            
+            <p style="margin-top: 2rem;"><strong>Autres débouchés :</strong> Statisticien, Data Manager, Chargé d'études, Gestionnaire de données ou encore Chef de projet AMOA.</p>
+        </div>
+
+        <div id="cyber" class="tab-content">
+            <h2>La sécurité : Notre signature</h2>
+            <p>Le BUT SD d'Aurillac offre une plus-value unique : des compétences solides en cybersécurité.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>⚖️ Droit & Éthique</h3>
+                    <p>Mieux appréhender la réglementation entourant les données personnelles et le cadre juridique de la protection des données.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 Protection Technique</h3>
+                    <p>Connaître les risques et les bonnes pratiques pour sécuriser efficacement un système d'information.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem; border-color: var(--primary);">
+                <h3>🚀 Poursuite d'études</h3>
+                <p>Grâce à ce socle, nos étudiants intègrent des Masters en IA ou cybersécurité, ou des écoles d'ingénieurs comme l'ENSIBS (cyberdéfense) ou l'ISIMA (informatique).</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>IUT Clermont-Auvergne - Département SD Aurillac </p>
+        <p>Projet de Vulgarisation - Données Dossier 2026</p>
+    </footer>
+
+    <script>
+function openTab(evt, tabName) {
+    const contents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+    }
+
+    const btns = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].classList.remove("active");
+    }
+
+    const targetTab = document.getElementById(tabName);
+    targetTab.classList.add("active");
+
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html> 
